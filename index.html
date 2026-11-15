@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Lima - CTO &amp; Advisor</title>
+<meta name="description" content="João Lima, executivo de tecnologia e staff engineer, com mais de 18 anos de atuação. CTO/CIO, arquiteto corporativo, advisor em IA, IT, OT e tech supply sourcing, entrega soluções inteligentes e complexas para mercado corporativo e governamental.">
+<meta property="og:title" content="João Lima - CTO &amp; Advisor">
+<meta property="og:description" content="Executivo de tecnologia com profundidade de arquiteto. +18 anos de experiência, +210 empresas e +15 governos atendidos.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://jlima.tec.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Mundo único escuro, coerente com a capa pessoal: preto profundo, verde de rede, prata no nome.
+     Layout: coluna editorial de 1120px, seções numeradas 01–08, cartões só onde há itens comparáveis. */
+  --bg:#07090a; --bg-2:#0d1113; --line:#1d2428; --ink:#e9eef0; --muted:#97a3a8; --accent:#1fa971; --accent-dim:#13603f;
+  --silver:linear-gradient(180deg,#ffffff 0%,#c9d1d4 55%,#8e999d 100%);
+  --f-display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1120px; --r:10px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,canvas{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#000;padding:8px 14px;border-radius:6px;z-index:99}
+.skip:focus{left:16px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(7,9,10,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.mono-logo{font:600 15px var(--f-display);letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mono-logo span{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--accent-dim);border-radius:8px;color:var(--accent);font-size:13px}
+nav.main{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+nav.main a{text-decoration:none}
+nav.main a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14.5px var(--f-body);text-decoration:none;padding:11px 18px;border-radius:8px;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#03140c}
+.btn-primary:hover{background:#3cc98c}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent-dim);color:var(--accent)}
+@media (max-width:860px){nav.main{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 15% 110%,rgba(31,169,113,.16),transparent 70%),linear-gradient(90deg,rgba(7,9,10,.2) 0%,rgba(7,9,10,.85) 55%,rgba(7,9,10,.95) 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center;padding-top:88px;padding-bottom:72px}
+.eyebrow{font:500 12.5px var(--f-mono);letter-spacing:2.5px;text-transform:uppercase;color:var(--accent)}
+.hero h1{font:700 clamp(40px,5.6vw,68px)/1.04 var(--f-display);letter-spacing:-1.5px;margin:18px 0 6px;background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent;text-wrap:balance}
+.hero .role{font:600 clamp(20px,2.4vw,28px)/1.3 var(--f-display);color:var(--ink);text-wrap:balance;max-width:20ch}
+.hero .role em{font-style:normal;color:var(--accent)}
+.hero p.lead{color:var(--muted);max-width:56ch;margin-top:18px;font-size:18px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.audience{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;align-items:center}
+.audience b{font:500 12px var(--f-mono);letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-right:4px}
+.tag{font:500 13px var(--f-body);color:var(--ink);border:1px solid var(--line);background:rgba(13,17,19,.7);padding:5px 11px;border-radius:999px}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:16px;border:1px solid var(--line);background:linear-gradient(160deg,#121719,#0a0d0e);display:grid;place-items:center;overflow:hidden}
+.portrait picture,.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(7,9,10,.45));pointer-events:none}
+.portrait .mono{font:700 92px var(--f-display);background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-4px}
+.portrait .note{position:absolute;bottom:14px;left:14px;right:14px;font:400 12px var(--f-mono);color:var(--muted);text-align:center}
+.principle{margin-top:14px;font:400 14px var(--f-mono);color:var(--muted);border-left:2px solid var(--accent);padding-left:12px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:56px}.portrait{max-width:320px;aspect-ratio:4/5}}
+
+/* stats */
+.stats{border-bottom:1px solid var(--line);background:var(--bg-2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{padding:28px 18px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .n{font:700 clamp(26px,3vw,36px)/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.stat .n small{color:var(--accent);font-size:.6em;margin:0 2px}
+.stat .l{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+@media (max-width:860px){.stats .wrap{grid-template-columns:1fr 1fr}.stat{border-left:0;border-top:1px solid var(--line);padding-left:0}.stat:nth-child(-n+2){border-top:0}}
+
+/* ticker */
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:14px 0;white-space:nowrap}
+.ticker .track{display:inline-flex;gap:48px;font:500 14px var(--f-mono);letter-spacing:2px;text-transform:uppercase;color:var(--muted);animation:slide 40s linear infinite}
+.ticker .track span::after{content:"◆";color:var(--accent);margin-left:48px;font-size:9px;vertical-align:2px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}html{scroll-behavior:auto}}
+
+/* sections */
+section.s{padding:96px 0;border-bottom:1px solid var(--line)}
+.s-head{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:44px}
+.s-num{font:500 13px var(--f-mono);color:var(--accent);letter-spacing:2px;padding-top:10px}
+.s-head h2{font:700 clamp(28px,3.4vw,42px)/1.12 var(--f-display);letter-spacing:-.8px;text-wrap:balance;max-width:22ch}
+.s-head p{color:var(--muted);margin-top:14px;max-width:62ch}
+.s-body{margin-left:144px}
+@media (max-width:860px){.s-head{grid-template-columns:1fr;gap:6px}.s-body{margin-left:0}section.s{padding:68px 0}}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.pillar{background:var(--bg);padding:28px 26px}
+.pillar .k{font:500 12px var(--f-mono);color:var(--accent);letter-spacing:2px}
+.pillar h3{font:600 21px var(--f-display);margin:10px 0 8px}
+.pillar p{color:var(--muted);font-size:15.5px}
+@media (max-width:1080px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pillars{grid-template-columns:1fr}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.svc{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:linear-gradient(180deg,var(--bg-2),var(--bg));display:flex;flex-direction:column;gap:12px}
+.svc .top-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.svc .k{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:2px}
+.svc h3{font:600 22px/1.25 var(--f-display)}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc .deliver{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px}
+.svc .deliver b{font:500 11.5px var(--f-mono);letter-spacing:1.5px;color:var(--accent);display:block;margin-bottom:4px;text-transform:uppercase}
+.svc a.more{font:500 13.5px var(--f-body);color:var(--accent);text-decoration:none}
+@media (max-width:860px){.services{grid-template-columns:1fr}}
+
+/* method */
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:0;row-gap:36px;counter-reset:m}
+.step{padding:6px 22px 0;border-left:1px solid var(--line);position:relative}
+.step:nth-child(4n+1){border-left:0;padding-left:0}
+.step .k{font:700 34px var(--f-display);color:var(--accent-dim)}
+.step h3{font:600 18.5px var(--f-display);margin:10px 0 8px}
+.step p{color:var(--muted);font-size:15px}
+@media (max-width:860px){.method{grid-template-columns:1fr 1fr;row-gap:30px}.step:nth-child(n){border-left:1px solid var(--line);padding-left:22px}.step:nth-child(odd){border-left:0;padding-left:0}}
+@media (max-width:480px){.method{grid-template-columns:1fr}.step{border-left:0;padding-left:0}}
+
+/* timeline */
+.timeline{list-style:none;border-left:1px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 30px 30px}
+.timeline li::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent-dim)}
+.timeline li.now::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px rgba(31,169,113,.15)}
+.timeline .when{font:500 12.5px var(--f-mono);letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}
+.timeline h3{font:600 19px var(--f-display);margin:4px 0 2px}
+.timeline .org{color:var(--ink);font-size:15px}
+.timeline p{color:var(--muted);font-size:15px;margin-top:6px;max-width:64ch}
+
+/* results */
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.res{border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.res .big{font:700 34px/1 var(--f-display);color:var(--accent);font-variant-numeric:tabular-nums}
+.res .ba{font:500 14px var(--f-mono);color:var(--ink);margin-top:10px}
+.res p{color:var(--muted);font-size:14.5px;margin-top:8px}
+.res .ctx{font:400 12.5px var(--f-mono);color:#6d797e;margin-top:12px}
+@media (max-width:860px){.results{grid-template-columns:1fr}}
+
+/* focus + credentials */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--accent-dim);color:var(--ink);padding:9px 15px;border-radius:999px;font-size:15px;background:rgba(31,169,113,.05)}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.creds h3{font:500 12.5px var(--f-mono);letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:16px}
+.creds ul{list-style:none;display:grid;gap:12px}
+.creds li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px;font-size:15.5px}
+.creds li span{color:var(--muted);font:400 13px var(--f-mono);white-space:nowrap}
+@media (max-width:860px){.creds{grid-template-columns:1fr}}
+
+/* closing */
+.closing{padding:110px 0;text-align:left;position:relative;overflow:hidden}
+.closing h2{font:700 clamp(32px,4.4vw,56px)/1.06 var(--f-display);letter-spacing:-1.2px;max-width:18ch;text-wrap:balance}
+.closing h2 em{font-style:normal;color:var(--accent)}
+.closing p{color:var(--muted);max-width:58ch;margin-top:18px;font-size:18px}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.contact{border:1px solid var(--line);border-radius:var(--r);padding:18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .2s}
+.contact:hover{border-color:var(--accent-dim)}
+.contact b{font:500 11.5px var(--f-mono);letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}
+.contact span{font-size:15px;word-break:break-word}
+.cv-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.cv-row small{font:400 13px var(--f-mono);color:var(--muted);margin-right:6px}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.contact-grid{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+.eb-list span{display:inline-block;white-space:nowrap}.eb-list span:not(:last-child)::after{content:"·";margin:0 .7em}
+.fw{margin-top:44px;border:1px solid var(--accent-dim);border-radius:var(--r);padding:22px 26px;background:rgba(31,169,113,.05);display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:baseline}.fw-k{font:500 12.5px var(--f-mono);letter-spacing:2px;color:var(--accent);text-transform:uppercase}.fw p{color:var(--ink);font-size:15.5px}@media (max-width:600px){.fw{grid-template-columns:1fr;gap:8px}}
+.role-list{max-width:none!important;font-size:clamp(17px,1.7vw,21px)!important;line-height:1.5!important;margin-top:6px}.role-list span{display:inline-block;white-space:nowrap}.role-list span:not(:last-child)::after{content:"|";margin:0 .55em;color:var(--muted);font-weight:400}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mono-logo" href="#topo"><span>JL</span>JOÃO LIMA</a>
+    <nav class="main" aria-label="Seções">
+      <a href="#tese">Atuação</a><a href="#atuacao">Serviços</a><a href="#metodo">Frameworks</a><a href="#trajetoria">Trajetória</a><a href="#resultados">Resultados</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-primary" href="https://cal.com/jpgdelima" target="_blank" rel="noopener">Agendar conversa</a>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- HERO -->
+<section class="hero" id="topo">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <h1>João Lima</h1>
+      <div class="role role-list"><em><span>CTO-CIO</span><span>Tech Executive</span><span>Advisor</span><span>Head of Tech</span><span>Staff Engineer</span></em></div>
+      <p class="lead">Conecto estratégia, tecnologia, arquitetura, governança e negócios para empresas e governos que precisam de resultados e resiliência em operações críticas.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://cal.com/jpgdelima" target="_blank" rel="noopener">Agendar uma conversa</a>
+        <a class="btn btn-ghost" href="#atuacao">Conheça minha atuação</a>
+      </div>
+      <div class="audience"><span class="tag">Cidades</span><span class="tag">Indústrias</span><span class="tag">Enterprise</span><span class="tag">Startups</span><span class="tag">Executivos</span><span class="tag">Boards</span><span class="tag">Investidores</span></div>
+    </div>
+    <div>
+      <div class="portrait"><picture><source srcset="img/joao-lima.webp" type="image/webp"><img src="img/joao-lima.jpg" alt="João Lima, CTO &amp; Advisor" width="960" height="1200" fetchpriority="high"></picture></div>
+      <div class="principle">Empreender por vocação. Tecnologia por paixão!</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats" aria-label="Números">
+  <div class="wrap">
+    <div class="stat"><div class="n"><small>+</small>18</div><div class="l">anos em tech &amp; business</div></div>
+    <div class="stat"><div class="n"><small>+</small>R$100M</div><div class="l">receita influenciada em projetos e contratos</div></div>
+    <div class="stat"><div class="n"><small>+</small>210</div><div class="l">corporações e +15 governos atendidos</div></div>
+    <div class="stat"><div class="n">~27<small>%</small></div><div class="l">de redução média em CapEx/OpEx</div></div>
+    <div class="stat"><div class="n">Global</div><div class="l">3 continentes, 4 países, 7 estados e 38 cidades</div></div>
+  </div>
+</div>
+
+<!-- 01 TESE -->
+<section class="s" id="tese">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">01 · TESE</div><div>
+      <h2>Transformação digital real só acontece quando negócio e tecnologia funcionam em sinergia.</h2>
+      <p>Comecei na tecnologia aos 13 anos. Desde então, aprendi que o problema raramente é falta de ferramenta: é falta de clareza, de estratégia, de arquitetura e execução.</p>
+    </div></div>
+    <div class="s-body">
+      <div class="pillars">
+        <div class="pillar"><div class="k">01</div><h3>Clareza</h3><p>Traduzir tecnologia em linguagem de negócio para que diretoria e operação decidam com a mesma informação.</p></div>
+        <div class="pillar"><div class="k">02</div><h3>Estratégia</h3><p>Conectar estratégia de decisão em requisitos de negócio e arquiteturas técnicas complexas com roadmap de resultados claro.</p></div>
+        <div class="pillar"><div class="k">03</div><h3>Arquitetura</h3><p>Dados, cloud, conectividade, sensoriamento, infraestrutura, telecomunicações, cibersegurança, serviços gerenciados, plataformas e inovação, conectados como um todo.</p></div>
+        <div class="pillar"><div class="k">04</div><h3>Execução</h3><p>Executar com clareza. Medir o que é mensurável. Governar indicadores. Sustentar resultados.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ATUAÇÃO -->
+<section class="s" id="atuacao">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">02 · ATUAÇÃO</div><div>
+      <h2>Meu trabalho começa cruzando tecnologia com processos.</h2>
+      <p>Dimensiono a solução tailor-made para sua necessidade, com propósito claro e entregas sólidas.</p>
+    </div></div>
+    <div class="s-body">
+      <div class="services">
+        <article class="svc"><div class="top-row"><span class="k">01</span><a class="more" href="cv/cto/">Ver perfil →</a></div><h3>CTO / CIO</h3><p>Liderança executiva que conecta tecnologia e expertise com as necessidades reais do negócio, com reporte direto à diretoria.</p><div class="deliver"><b>Entrega central</b>Tecnologia alinhada ao negócio, com roadmap, objetivos, clareza de direção, governança e processos estruturados.</div></article>
+        <article class="svc"><div class="top-row"><span class="k">02</span><a class="more" href="cv/advisor/">Ver perfil →</a></div><h3>Strategic Advisor</h3><p>Orientação estratégica e consultiva, cruzando visão de mercado e apoio na tomada de decisões para diversas áreas do negócio.</p><div class="deliver"><b>Entrega central</b>Diagnósticos, planos, modelagem, PDTI, projetos base e acompanhamento.</div></article>
+        <article class="svc"><div class="top-row"><span class="k">03</span><a class="more" href="cv/sourcing/">Ver perfil →</a></div><h3>Tech Supply Sourcing</h3><p>Estratégia de compras e contratos de tecnologia: fornecedores, fabricantes, licenciamento e TCO, com foco em redução de custos e risco.</p><div class="deliver"><b>Entrega central</b>Formatação de projetos, gestão de contratos, fornecedores certos, revisões de arquitetura e lock-in.</div></article>
+        <article class="svc"><div class="top-row"><span class="k">04</span><a class="more" href="cv/dpoaas/">Ver perfil →</a></div><h3>DPOaaS</h3><p>Oferecemos uma visão completa da postura de privacidade e proteção de dados.</p><div class="deliver"><b>Entrega central</b>Consultoria de proteção de dados e adequação LGPD, com suporte jurídico.</div></article>
+        <article class="svc"><div class="top-row"><span class="k">05</span><a class="more" href="cv/manager/">Ver perfil →</a></div><h3>Gestão e Governança</h3><p>Planejar, construir, entregar e operar a partir das definições DO QUE e PARA ONDE determinadas pela governança.</p><div class="deliver"><b>Entrega central</b>Gestão de serviços, riscos, governança, recursos, valor, desempenho, times e continuidade.</div></article>
+        <article class="svc"><div class="top-row"><span class="k">06</span><a class="more" href="cv/msp/">Ver perfil →</a></div><h3>Serviços Gerenciados Especializados</h3><p>Projetamos, instalamos e sustentamos tecnologias, equipamentos e operações. Você contrata expertise, resiliência e disponibilidade.</p><div class="deliver"><b>Entrega central</b>Arquitetura, soluções e serviços em ambientes de missão crítica, IT/OT, conectividade, telecomunicações, cibersegurança, multicloud, dados, sensoriamento e projetos para cidades inteligentes e mercados corporativos.</div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 MÉTODO -->
+<section class="s" id="metodo">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">03 · MÉTODO</div><div>
+      <h2>Do diagnóstico ao resultado, em sete movimentos.</h2>
+    </div></div>
+    <div class="s-body">
+      <div class="method">
+        <div class="step"><div class="k">01</div><h3>Kick-off e documental</h3><p>NDA, RACI, memorandum e termos.</p></div>
+        <div class="step"><div class="k">02</div><h3>TDD</h3><p>Execução de technical due diligence, mapeamento e entrevistas para proposição de soluções.</p></div>
+        <div class="step"><div class="k">03</div><h3>GAP Analysis</h3><p>Diagnósticos, gestão e consolidação de itens, formatação de backlogs.</p></div>
+        <div class="step"><div class="k">04</div><h3>Desenhar a arquitetura</h3><p>Definir o caminho técnico e o modelo de negócio que sustentam a decisão.</p></div>
+        <div class="step"><div class="k">05</div><h3>BoD approval e Frame Decision</h3><p>Separação entre sintomas, causas, dependências, alternativas, orçamentos, consequências e resultados.</p></div>
+        <div class="step"><div class="k">06</div><h3>Executar com governança</h3><p>Conduzir projetos, fornecedores e times com indicadores e marcos claros.</p></div>
+        <div class="step"><div class="k">07</div><h3>Evolução e melhoria</h3><p>Aplicação de PDCA/PDSA, DMAIC ou Kaizen.</p></div>
+      </div>
+      <div class="fw"><div class="fw-k">Frameworks</div><p>Referências globais aplicadas à sua realidade: TOGAF, ITIL, HDI, COBIT, EA, BPM, Scrum, BSC, PMBOK, DCIM, CAF/CSJ, NIST/CIS Controls, ISO, IEC, ABNT, IEEE, etc.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 TRAJETÓRIA -->
+<section class="s" id="trajetoria">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">04 · TRAJETÓRIA</div><div>
+      <h2>Mais de 18 anos atuando com desafios complexos e transitando na interseção de tecnologia e negócios em diversos mercados.</h2>
+    </div></div>
+    <div class="s-body">
+      <ol class="timeline">
+        <li class="now"><div class="when">Hoje</div><h3>Founder &amp; CTO</h3><div class="org">ITTechnologies · desde 2011</div><p>Fundei a ITTechnologies no desejo de prestar a melhor consultoria técnica. Só expertise técnica não basta, é preciso ter visão de negócio e estratégia.</p></li>
+        <li class="now"><div class="when">Hoje</div><h3>Head de Engenharia de Pré-Venda e Arquitetura de Soluções</h3><div class="org">Distribuidor de Soluções</div><p>Estruturação da área de arquitetura de pré-vendas para projetos B2B e B2G de infraestrutura, redes, data center e segurança. 103 projetos entregues em 24 meses.</p></li>
+        <li class="now"><div class="when">Hoje</div><h3>CTO &amp; Strategic Advisor</h3><div class="org">Integrador de Soluções Governamentais</div><p>Estruturação da BU e estratégia de scale-up dos negócios de TI, transitando entre Cloud, Infraestrutura, Serviços Gerenciados, Telecomunicações, Cibersegurança e Partner Channels.</p></li>
+        <li class="now"><div class="when">Hoje</div><h3>Technology Procurement Advisor</h3><div class="org">Multinacional Farmacêutica</div><p>Sourcing, benchmarks, decision support, gestão de projetos e demandas, vendor management, TCO, lock-in e arquiteturas técnicas.</p></li>
+        <li class="now"><div class="when">Hoje</div><h3>Founder &amp; CTO</h3><div class="org">PrimeCyber · desde 2025</div><p>Venture tailor-made de soluções de tecnologia para desafios complexos, incluindo IA, ML, LLM, visão computacional, ASIC, COMEX, OpenSourcing, Blockchain, RPA e Quantum.</p></li>
+        <li><div class="when">2007 → 2019</div><h3>Resumo da jornada</h3><p>Das lan houses fazendo manutenção e suporte até a primeira certificação Microsoft com 13 anos. Do estágio em TI até os primeiros empregos na área. Dos times de engenheiros, analistas, techleads e consultores que gerenciei desde muito novo até o início com a ITTechnologies e a diversificação de portfólios. Mais de 60 certificações, 4 formações e diversos treinamentos e imersões ao longo dos anos.</p></li>
+        <li><div class="when">Primeiro marco de negócios</div><h3>Feira do Empreendedor Joseense</h3><p>O primeiro contato com empreendedorismo, criatividade e pensamento outlier. Da bancada na adolescência à liderança.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 05 RESULTADOS -->
+<section class="s" id="resultados">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">05 · RESULTADOS</div><div>
+      <h2>Alguns resultados de alto impacto.</h2>
+      <p>Recortes de projetos e cases conduzidos ao longo da carreira.</p>
+    </div></div>
+    <div class="s-body">
+      <div class="results">
+        <div class="res"><div class="big">−64%</div><div class="ba">em OpEx anual em cloud e colaboração</div><p>Migração de Google Workspace para Microsoft 365 com estrutura multitenant para softwarehouses.</p><div class="ctx">Advisory · 2023–2026</div></div>
+        <div class="res"><div class="big">90,2% → 98,9%</div><div class="ba">disponibilidade em 3 anos</div><p>Modernização da infraestrutura de cerca de 63 unidades de varejo e centros de distribuição.</p><div class="ctx">Varejo · 2018–2021</div></div>
+        <div class="res"><div class="big">−28%</div><div class="ba">custos de cloud em 18 meses</div><p>Programa de FinOps e padronização de soluções multicloud, como instâncias, recursos, zonas e processos.</p><div class="ctx">Cloud enterprise · 2020–2024</div></div>
+        <div class="res"><div class="big">28</div><div class="ba">clientes em jornada cloud</div><p>11 adoções de Cloud Adoption Framework e 17 migrações para Microsoft e AWS.</p><div class="ctx">Cloud enterprise · 2020–2024</div></div>
+        <div class="res"><div class="big">15</div><div class="ba">órgãos governamentais atendidos nos últimos 7 anos</div><p>Promovendo cidades mais resilientes, conectadas, seguras e disponíveis, com resultados na segurança pública, nos servidores públicos e mais velocidade para munícipes.</p><div class="ctx">B2G · 2019–2026</div></div>
+        <div class="res"><div class="big">+90 mil</div><div class="ba">chamados com NPS 4,7–4,8 de 5,0</div><p>Gestão, acompanhamento e scale-up de operações e serviços gerenciados ao longo de mais de uma década.</p><div class="ctx">B2B/B2G · 2016–2026</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 FOCO -->
+<section class="s" id="foco">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">06 · FOCO ATUAL</div><div><h2>Vamos gerar novas oportunidades de negócio?</h2></div></div>
+    <div class="s-body"><div class="chips">
+      <span class="chip">IA</span><span class="chip">Smart Cities</span><span class="chip">Digital</span><span class="chip">Indústria 4.0</span><span class="chip">Multicloud &amp; Data Center</span><span class="chip">Tech Supply</span><span class="chip">Infraestrutura</span><span class="chip">Telecomunicações</span><span class="chip">Operações e Projetos</span><span class="chip">Defesa</span><span class="chip">Inovação</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- 07 FORMAÇÃO -->
+<section class="s" id="formacao">
+  <div class="wrap">
+    <div class="s-head"><div class="s-num">07 · FORMAÇÃO</div><div><h2>Minha jornada como eterno aprendiz.</h2></div></div>
+    <div class="s-body"><div class="creds">
+      <div><h3>Acadêmico</h3><ul>
+        <li>Técnico em Telecomunicações</li>
+        <li>Tecnólogo em Redes de Computadores</li>
+        <li>Gestão de Infraestrutura de TI</li>
+        <li>Engenharia e Arquitetura de Soluções (ICT)</li>
+        <li>Extensão em Inteligência Artificial</li>
+      </ul></div>
+      <div><h3>Certificações</h3><ul>
+        <li>Microsoft</li>
+        <li>Fortinet</li>
+        <li>Cisco</li>
+        <li>Projetos</li>
+        <li>HDI / EXIN / ISACA</li>
+        <li>Lightera</li>
+      </ul></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 08 CONTATO -->
+<section class="closing" id="contato">
+  <div class="wrap">
+    <div class="eyebrow">08 · CONTATO</div>
+    <h2 style="margin-top:14px">Traga um desafio complexo. <em>Com clareza e tecnologia, nós resolvemos.</em></h2>
+    <p>Uma conversa de 30 minutos para entender o seu cenário e ver se faz sentido trabalharmos juntos.</p>
+    <div class="contact-grid">
+      <a class="contact" href="https://cal.com/jpgdelima" target="_blank" rel="noopener"><b>Agenda</b><span>Agendar conversa</span></a>
+      <a class="contact" href="https://wa.me/5512981494017?text=Ol%C3%A1%20Jo%C3%A3o%2C%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener"><b>WhatsApp</b><span>+55 (12) 98149-4017</span></a>
+      <a class="contact" href="mailto:joao.lima@jlima.tec.br"><b>E-mail</b><span>joao.lima@jlima.tec.br</span></a>
+      <a class="contact" href="https://www.linkedin.com/in/jpgdelima" target="_blank" rel="noopener"><b>LinkedIn</b><span>/in/jpgdelima</span></a>
+    </div>
+    <div class="cv-row"><small>Currículo em PDF</small>
+      <a class="btn btn-ghost" href="cv/CV-JOAOLIMA-PT.pdf">Português</a>
+      <a class="btn btn-ghost" href="cv/CV-JOAOLIMA-EN.pdf">English</a>
+      <a class="btn btn-ghost" href="cv/CV-JOAOLIMA-ES.pdf">Español</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 João Lima · SJCampos, São Paulo, Brasil</span>
+    <nav aria-label="Redes"><a href="https://www.linkedin.com/in/jpgdelima" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/jpgdelima" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/jpgdelima" target="_blank" rel="noopener">GitHub</a><a href="https://linktr.ee/jpgdelima" target="_blank" rel="noopener">Linktree</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const c=document.getElementById('net'); if(!c) return;
+  const ctx=c.getContext('2d'); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w,h,pts=[]; const DPR=Math.min(2,devicePixelRatio||1);
+  function resize(){const r=c.getBoundingClientRect();w=r.width;h=r.height;c.width=w*DPR;c.height=h*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+    const n=Math.round(w*h/14000);pts=Array.from({length:n},()=>({x:Math.random()*w*.7,y:Math.random()*h,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()*1.6+.6}));draw();}
+  function draw(){ctx.clearRect(0,0,w,h);
+    for(let i=0;i<pts.length;i++){const p=pts[i];for(let j=i+1;j<pts.length;j++){const q=pts[j];const d=Math.hypot(p.x-q.x,p.y-q.y);if(d<120){ctx.strokeStyle='rgba(31,169,113,'+(0.22*(1-d/120))+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}}
+    for(const p of pts){ctx.fillStyle='rgba(60,201,140,.75)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();}}
+  function step(){for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w*.75)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}draw();requestAnimationFrame(step);}
+  addEventListener('resize',resize);resize();if(!reduce)requestAnimationFrame(step);
+})();
+</script>
+</body>
+</html>
